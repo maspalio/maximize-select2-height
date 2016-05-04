@@ -12,6 +12,15 @@
 // NOTE: The original <select> element that is $().select2()'d *must* have a
 // unique ID for this code to work. (Ex: <select id="my-unique-id"></select>)
 
+(function(global, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(['jquery'], factory);
+  } else if (typeof exports === 'object') {
+    factory(require('jquery'));
+  } else {
+    factory(global.jQuery);
+  }
+})(this, function($) {
 (function ($) {
   "use strict";
 
@@ -149,3 +158,4 @@
     });
   };
 })(jQuery);
+});
